@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ELEVIQUE Privacy Policy</title>
+<style>
+  body { margin: 0; background: #fafafa; color: #18181b; font: 16px/1.65 system-ui, -apple-system, sans-serif; }
+  main { max-width: 680px; margin: 0 auto; padding: 48px 20px 72px; }
+  h1 { font-size: 30px; margin: 0 0 4px; }
+  h2 { font-size: 19px; margin: 32px 0 8px; }
+  p, li { color: #3f3f46; }
+  .muted { color: #71717a; font-size: 14px; }
+  @media (prefers-color-scheme: dark) { body { background: #18181b; color: #fafafa; } p, li { color: #d4d4d8; } .muted { color: #a1a1aa; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>ELEVIQUE Privacy Policy</h1>
+  <p class="muted">Last updated: 24 October 2026</p>
+
+  <p>ELEVIQUE is a Chrome extension that queues prompts and submits them to Frameo.ai on your behalf. This policy explains what it does with your information.</p>
+
+  <h2>What we collect</h2>
+  <p>Nothing. ELEVIQUE has no servers, no accounts, no analytics and no tracking. We never receive your prompts, images, credit balance or any other data.</p>
+
+  <h2>What is stored, and where</h2>
+  <ul>
+    <li>Your prompt queue, default settings and per-prompt settings.</li>
+    <li>Reference images you upload into the extension.</li>
+    <li>The results of a canvas scan: names and image addresses of assets on your Frameo canvas.</li>
+    <li>Shot lists you paste in, the links you make between shot-list names and canvas images, and a history of what was sent for each shot.</li>
+    <li>If you turn on the optional story check: your Groq API key, model choice, and its recent answers (so the same check is never sent twice).</li>
+  </ul>
+  <p>All of this is saved only in your own browser using Chrome's extension storage. It is not synced to us. Removing the extension deletes it.</p>
+
+  <h2>What is sent, and to whom</h2>
+  <p>When you click Generate, ELEVIQUE fills in Frameo's own Generate panel in your open frameo.ai tab, including your prompt, settings and reference images, and clicks Generate. That information goes only to Frameo.AI, through your own logged-in session, exactly as if you had entered it yourself. Frameo's handling of it is covered by <a href="https://frameo.ai/privacy-policy">Frameo's privacy policy</a>.</p>
+  <p>ELEVIQUE reads your Frameo credit balance, generation costs and canvas images from the page only to show them to you and to stop the queue when credits run low.</p>
+  <p><b>Optional story check (Groq).</b> This is off unless you paste your own Groq API key into the extension. When it's on and you run a story check, ELEVIQUE sends that shot's row from your shot list, the row for the shot before it, the prompt sent for the shot before, and the prompt about to be sent to Groq (api.groq.com), using your key. If you upload a written script (not a shot table) to be split into shots, its full text and the names of your canvas images go to Groq once for that. Nothing else is sent, and nothing goes to us. Groq's handling of it is covered by <a href="https://groq.com/privacy-policy/">Groq's privacy policy</a>. Removing the key stops it.</p>
+
+  <h2>Permissions</h2>
+  <ul>
+    <li><b>Storage / unlimited storage</b>: to keep your queue and reference images in your browser.</li>
+    <li><b>Side panel</b>: to show the extension next to Frameo.</li>
+    <li><b>Access to frameo.ai</b>: to fill in and submit Frameo's Generate panels and read your balance and canvas. The extension does not run on any other website.</li>
+    <li><b>Access to api.groq.com</b> (optional, asked for only when you save a Groq key): to send the story check described above.</li>
+  </ul>
+
+  <h2>Selling or sharing data</h2>
+  <p>We do not sell, rent, share or transfer any user data, because we do not collect any.</p>
+
+  <h2>Not affiliated with Frameo</h2>
+  <p>ELEVIQUE is an independent tool. It is not affiliated with, endorsed by or sponsored by Frameo.AI or Dashverse.</p>
+
+  <h2>Changes and contact</h2>
+  <p>If this policy changes, the new version will be posted at this address with a new date. Questions: <span>[YOUR CONTACT EMAIL]</span></p>
+</main>
+</body>
+</html>

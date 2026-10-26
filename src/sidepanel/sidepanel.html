@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <title>ELEVIQUE</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <header>
+    <div class="logo" id="logo"></div>
+    <div class="seg" role="radiogroup" aria-label="What to create" id="modes"></div>
+    <div class="credits" id="credits" title="Frameo credits"></div>
+  </header>
+  <div class="conn" id="conn" role="status"></div>
+  <nav class="tabs" id="tabs" aria-label="View"></nav>
+  <main id="main"></main>
+  <footer id="footer"></footer>
+
+  <dialog class="sheet" id="paste" aria-labelledby="pasteTitle">
+    <div class="grip"></div>
+    <div class="sheet-head">
+      <h2 id="pasteTitle">Paste a list</h2>
+      <form method="dialog"><button class="icon-btn" aria-label="Close" data-icon="x"></button></form>
+    </div>
+    <p>One per line. Copy straight from a doc or spreadsheet column.</p>
+    <label for="bulk" class="sr">Prompts, one per line</label>
+    <textarea id="bulk" placeholder="Knight walks through a burning village | 16:9&#10;Close-up of a dragon eye opening&#10;Poster of the hero | image"></textarea>
+    <div class="lib-head"><span class="label">Preview</span><span class="found" id="found"></span></div>
+    <div class="preview" id="preview"></div>
+    <details class="tip">
+      <summary>Optional: settings per line</summary>
+      <p>Add them after a <code>|</code>, in any order: <code>image</code> <code>16:9</code> <code>10s</code> <code>1080p</code> <code>ref=hero.png</code> <code>first=a.png</code> <code>end=b.png</code> <code>el=c.png,d.png</code></p>
+    </details>
+    <div class="pair">
+      <button class="ghost" id="pasteCancel">Cancel</button>
+      <button class="cta" id="pasteAdd" disabled>Add prompts</button>
+    </div>
+  </dialog>
+
+  <dialog class="sheet" id="scriptSheet" aria-labelledby="scriptTitle">
+    <div class="grip"></div>
+    <div class="sheet-head">
+      <div><h2 id="scriptTitle">Paste shot list</h2><small id="scriptFor"></small></div>
+      <form method="dialog"><button class="icon-btn" aria-label="Close" data-icon="x"></button></form>
+    </div>
+    <p>Copy the whole table, header row included, from Sheets, Docs, Excel or Word. Blank Location, Wardrobe or Time of day cells take the value from the shot above; <code>-</code> clears one.</p>
+    <div class="upload-row">
+      <label class="btn-sm upload-btn">Upload a file<input type="file" id="scriptFile" class="sr" accept=".xlsx,.csv,.tsv,.txt,.md,.docx"></label>
+      <small id="scriptStatus" role="status">.xlsx, .csv, .docx or .txt. A table is read as-is; a written script is split into shots by Groq.</small>
+    </div>
+    <label for="scriptText" class="sr">Shot list, one row per shot</label>
+    <textarea id="scriptText" spellcheck="false" placeholder="Shot&#9;Action&#9;Characters&#9;Location&#9;Props&#9;Wardrobe&#9;Chain&#10;1&#9;Maximus strides onto the arena sand&#9;Maximus&#9;Seven Rivers arena&#9;Saber&#9;torn red cloak&#9;"></textarea>
+    <div class="lib-head"><span class="label">Preview</span><span class="found" id="scriptFound"></span></div>
+    <div class="preview" id="scriptPreview"></div>
+    <div class="pair">
+      <button class="ghost" id="scriptCancel">Cancel</button>
+      <button class="cta" id="scriptSave" disabled>Save shot list</button>
+    </div>
+  </dialog>
+
+  <dialog class="sheet" id="picker" aria-labelledby="pickTitle">
+    <div class="grip"></div>
+    <div class="sheet-head">
+      <div><h2 id="pickTitle">Add image</h2><small id="pickFor"></small></div>
+      <form method="dialog"><button class="icon-btn" aria-label="Close" data-icon="x"></button></form>
+    </div>
+    <span class="label" id="pickAsLabel">Use it as</span>
+    <div class="seg4" role="radiogroup" aria-label="Image slot" id="pickSlots"></div>
+    <div class="slot-hint" id="pickHintRow"><span class="i" data-icon="info"></span><span id="pickHint"></span></div>
+    <div class="lib-head"><span class="label">Your images</span><small>Upload once, reuse anywhere</small></div>
+    <div class="lib" id="lib"></div>
+    <div class="pair">
+      <button class="ghost" id="pickCancel">Cancel</button>
+      <button class="cta" id="pickApply">Use</button>
+    </div>
+  </dialog>
+
+  <script src="../utils/parse.js"></script>
+  <script src="../utils/files.js"></script>
+  <script src="sidepanel.js"></script>
+</body>
+</html>

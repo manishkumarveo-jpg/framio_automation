@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "ELEVIQUE",
+  "short_name": "ELEVIQUE",
+  "version": "1.0.0",
+  "description": "Bulk video & image queue for Frameo.ai: write or paste many prompts and send them one after another. Not affiliated with Frameo.",
+  "minimum_chrome_version": "116",
+  "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "permissions": ["storage", "unlimitedStorage", "sidePanel", "scripting"],
+  "host_permissions": ["https://frameo.ai/*", "https://*.frameo.ai/*"],
+  "optional_host_permissions": ["https://api.groq.com/*"],
+  "background": { "service_worker": "background/index.js" },
+  "side_panel": { "default_path": "sidepanel/sidepanel.html" },
+  "action": {
+    "default_title": "Open ELEVIQUE",
+    "default_icon": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png" }
+  },
+  "content_scripts": [
+    { "matches": ["https://frameo.ai/*", "https://*.frameo.ai/*"], "js": ["utils/parse.js", "content/index.js"] },
+    { "matches": ["https://frameo.ai/*", "https://*.frameo.ai/*"], "js": ["content/bridge.js"], "world": "MAIN" }
+  ]
+}

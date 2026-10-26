@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.DS_Store
+*.zip
+# Saved frameo.ai pages carry Frameo's client config (Firebase keys); keep them local
+docs/frameo-snapshots/*.html

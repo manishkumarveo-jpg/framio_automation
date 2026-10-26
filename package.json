@@ -1,0 +1,12 @@
+{
+  "name": "elevique",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bulk video & image queue for Frameo.ai (Chrome extension, MV3).",
+  "scripts": {
+    "build": "rm -rf dist/extension && mkdir -p dist/extension && cp -R src/. public/. dist/extension/ && rm dist/extension/utils/*.test.js",
+    "test": "node src/utils/parse.test.js",
+    "zip": "npm run build && cd dist/extension && zip -qr ../elevique-$npm_package_version.zip .",
+    "snapshot": "mkdir -p docs/frameo-snapshots && pbpaste > docs/frameo-snapshots/$(date +%F)-${NAME:-page}.html"
+  }
+}
